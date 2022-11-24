@@ -5,7 +5,7 @@ var passport = require('passport');
 router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
-router.get('/auth/github/success', (req, res, next) => {
+router.get('/success', (req, res, next) => {
   res.render('success');
 });
 router.get('/failure', (req, res, next) => {
@@ -18,7 +18,7 @@ router.get(
     failureRedirect: '/failure',
   }),
   (req, res) => {
-    res.redirect('success');
+    res.redirect('/success');
   }
 );
 module.exports = router;
